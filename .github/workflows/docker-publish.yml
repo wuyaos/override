@@ -1,6 +1,15 @@
 name: Docker Publish
 
 on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "The branch to run the workflow on"
+        required: false
+        default: "main"
+        type: choice
+        options:
+          - "main"
   push:
     branches:
       - main  # 或者您的主分支名称，例如 'master'
